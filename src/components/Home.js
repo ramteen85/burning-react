@@ -12,10 +12,6 @@ class Home extends Compoenent {
       <div>
         <Router>
           <Route />
-          <Route />
-          <Router >
-          <Login />
-          <Registration />
         </Router
       </div>
     )
