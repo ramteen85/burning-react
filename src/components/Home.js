@@ -11,7 +11,11 @@ class Home extends Compoenent {
     return (
       <div>
         <Router>
-          <Route />
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Registration} />
+          <Route exact path
         </Router
       </div>
     )
