@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchField = props => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.onSubmit}>
       <label>
         From:
         <input type="text" onChange={props.onChangeOrigin} />

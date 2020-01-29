@@ -4,7 +4,7 @@ import FlightResults from './FlightResults';
 
 import axios from 'axios';
 
-const URL_FLIGHTS = 'http://localhost:3000/flights.json';
+const URL_FLIGHTS = 'http://localhost:3000/flights'; //'http://localhost:3000/flights';
 
 class SearchFlights extends Component {
 
@@ -24,9 +24,13 @@ class SearchFlights extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    console.log('test');
     axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}`)
-    .then(res => this.setState({ flights: res}))
+    .then(res => {
+      console.log('request:',res);
+      this.setState({ flights: res});
+    }
+    )
     .catch(err => console.warn(err));
   }
 
@@ -63,7 +67,7 @@ class SearchFlights extends Component {
         <h1>Virgin Airlines</h1>
         <SearchField onSubmit={this.handleSubmit} onChangeOrigin={this.handleOrigin} onChangeDestination={this.handleDestination} />
         <h2>Flight Search Results</h2>
-        <FlightResults flights={testData} /> {/* this.state.flights */}
+        <FlightResults flights={this.state.flights} /> {/* this.state.flights */}
       </div>
     );
   }
