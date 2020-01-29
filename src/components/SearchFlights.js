@@ -4,7 +4,7 @@ import FlightResults from './FlightResults';
 
 import axios from 'axios';
 
-const URL_FLIGHTS = 'http://localhost:3000/flights';
+const URL_FLIGHTS = 'http://localhost:3000/flights.json';
 
 class SearchFlights extends Component {
 

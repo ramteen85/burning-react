@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const FlightResults = props => {
 
 
@@ -20,7 +22,7 @@ const FlightResults = props => {
             <tr key={f.id}>
               <td>{f.date}</td>
               <td>{f.flight}</td>
-              <td>{f.origin}&gt;{f.destination}</td>
+              <td><Link to={`/flights/{f.id}`}>{f.origin}&gt;{f.destination}</Link></td>
               <td>{f.plane}</td>
         		</tr>
           )
