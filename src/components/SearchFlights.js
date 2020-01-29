@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import SearchField from './SearchField';
 import FlightResults from './FlightResults';
 
+import axios from 'axios';
+
 const URL_FLIGHTS = 'http://localhost:3000/flights';
 
 class SearchFlights extends Component {
 
   state = {
     origin: '',
-    destination: ''
+    destination: '',
+    flights: []
   };
 
   handleDestination = event => {
@@ -22,18 +25,45 @@ class SearchFlights extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    axios.get(URL_FLIGHTS)
-    .then(res => console.log(res))
+    axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}`)
+    .then(res => this.setState({ flights: res}))
     .catch(err => console.warn(err));
   }
 
   render() {
+    const testData = [
+      {
+        id: 1,
+        date: '3/1/13',
+        flight: 23,
+        origin: 'JFK',
+        destination: 'SFO',
+        plane: 757
+      },
+      {
+        id: 2,
+        date: '3/3/13',
+        flight: 412,
+        origin: 'JFK',
+        destination: 'SFO',
+        plane: 747
+      },
+      {
+        id: 3,
+        date: '3/1/13',
+        flight: 9,
+        origin: 'JFK',
+        destination: 'SFO',
+        plane: 757
+      }
+    ];
+
     return (
       <div>
         <h1>Virgin Airlines</h1>
         <SearchField onSubmit={this.handleSubmit} onChangeOrigin={this.handleOrigin} onChangeDestination={this.handleDestination} />
         <h2>Flight Search Results</h2>
-        <FlightResults />
+        <FlightResults flights={testData} /> {/* this.state.flights */}
       </div>
     );
   }

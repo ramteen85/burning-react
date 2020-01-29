@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import axios from 'axios';
 
-const URL_USER = 'http://localhost:3000/users.json';
+const URL_USER = 'http://localhost:3000/users.json/' // 'http://10.1.4.76/sessions.json';
 
 class Login extends Component {
 
@@ -23,6 +23,7 @@ class Login extends Component {
   login = (userName, pwd) => {
     axios.post(URL_USER, {name: userName, password: pwd})
     .then( res => {
+      console.log(res);
       this.setState({ logged_in: res })
     })
     .catch( err => console.warn(err));
@@ -47,7 +48,7 @@ class Login extends Component {
         </label>
         <label>
           Password:
-          <input type="text" onChange={this.handlePassword} />
+          <input type="password" onChange={this.handlePassword} />
         </label>
         <input type="submit" value="Login"/>
       </form>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const SearchField = props => {
   return (
@@ -11,6 +11,7 @@ const SearchField = props => {
         To:
         <input type="text" onChange={props.onChangeDestination} />
       </label>
+      <input type="submit" value="Search Flights"/>
     </form>
   );
 };
