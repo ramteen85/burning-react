@@ -4,7 +4,7 @@ import FlightResults from './FlightResults';
 import styles from './css/SearchFlights.module.css';
 import axios from 'axios';
 
-const URL_FLIGHTS = 'http://localhost:3000/flights';
+const URL_FLIGHTS = 'http://localhost:3001/flights';
 
 class SearchFlights extends Component {
 
@@ -62,8 +62,8 @@ class SearchFlights extends Component {
       <div className={styles.container}>
         <h1 className={styles.header1}>Virgin Airlines</h1>
         <SearchField onSubmit={this.handleSubmit} onChangeOrigin={this.handleOrigin} onChangeDestination={this.handleDestination} />
-        <h2>Flight Search Results</h2>
-        <FlightResults flights={testData} /> {/* this.state.flights */}
+        <h2 className={styles.header2}>Flight Search Results</h2>
+        <FlightResults flights={this.state.flights} /> {/* this.state.flights */}
       </div>
     );
   }

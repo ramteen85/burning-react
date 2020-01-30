@@ -3,11 +3,12 @@
 }
 
 .header2 {
-  
+  margin-top: 2rem;
+  font-weight: normal;
 }
 
 .container {
-  width: 70%;
+  width: 350px;
   margin: 3rem auto;
   border-radius: 5px;
   border: 2px solid black;

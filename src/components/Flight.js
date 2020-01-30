@@ -73,3 +73,5 @@ class Flight extends Component {
     );
   }
 }
+
+export default Flight;
