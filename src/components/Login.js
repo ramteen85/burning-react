@@ -9,7 +9,7 @@ class Login extends Component {
   state = {
     name: '',
     password: '',
-    logged_in: false
+    logged_in: true
   };
 
   handleName = event => {
