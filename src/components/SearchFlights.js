@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchField from './SearchField';
 import FlightResults from './FlightResults';
-
+import styles from './css/SearchFlights.module.css';
 import axios from 'axios';
 
 const URL_FLIGHTS = 'http://localhost:3000/flights';
@@ -59,8 +59,8 @@ class SearchFlights extends Component {
     ];
 
     return (
-      <div>
-        <h1>Virgin Airlines</h1>
+      <div className={styles.container}>
+        <h1 className={styles.header1}>Virgin Airlines</h1>
         <SearchField onSubmit={this.handleSubmit} onChangeOrigin={this.handleOrigin} onChangeDestination={this.handleDestination} />
         <h2>Flight Search Results</h2>
         <FlightResults flights={testData} /> {/* this.state.flights */}
