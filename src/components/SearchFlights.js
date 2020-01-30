@@ -26,7 +26,10 @@ class SearchFlights extends Component {
     event.preventDefault();
 
     axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}`)
-    .then(res => this.setState({ flights: res}))
+    .then(res => {
+      console.log(res);
+      this.setState({ flights: res.data})
+    })
     .catch(err => console.warn(err));
   }
 

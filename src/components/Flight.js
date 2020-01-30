@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-const URL_FLIGHT = 'http://localhost:3000/flights/';
+const URL_FLIGHT = 'http://localhost:3001/flights/';
 
 class Flight extends Component {
 
@@ -15,7 +15,8 @@ class Flight extends Component {
       columns: 4,
       rows: 10,
       user: {
-        name: ''
+        name: 'Tom',
+        seat: '2B'
       }
     },
     selectedSeat: '',
@@ -25,6 +26,7 @@ class Flight extends Component {
   getFlightData = id => {
     axios.get(URL_FLIGHT + id)
     .then(res => {
+      console.log(res);
       const newFlight = res;
       this.setState({ flight: newFlight});
     })
@@ -49,7 +51,6 @@ class Flight extends Component {
   }
 
   render() {
-    return;
     const { date, flight, destination, origin, columns, rows, user } = this.state.flight;
     const seats = new Array(rows).fill(new Array(columns).fill('avail'));
 
