@@ -4,7 +4,7 @@ import FlightResults from './FlightResults';
 
 import axios from 'axios';
 
-const URL_FLIGHTS = 'http://localhost:3000/flights'; //'http://localhost:3000/flights';
+const URL_FLIGHTS = 'http://localhost:3001/flights'; //'http://localhost:3000/flights';
 
 class SearchFlights extends Component {
 
@@ -22,13 +22,14 @@ class SearchFlights extends Component {
     this.setState({ origin: event.target.value });
   }
 
+
   handleSubmit = event => {
     event.preventDefault();
     console.log('test');
-    axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}`)
+    axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}.json`)
     .then(res => {
       console.log('request:',res);
-      this.setState({ flights: res});
+      this.setState({ flights: res.data});
     }
     )
     .catch(err => console.warn(err));

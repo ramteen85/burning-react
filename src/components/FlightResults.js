@@ -21,7 +21,7 @@ const FlightResults = props => {
           return (
             <tr key={f.id}>
               <td>{f.date}</td>
-              <td>{f.flight}</td>
+              <td>{f.flightnumber}</td>
               <td><Link to={`/flights/{f.id}`}>{f.origin}&gt;{f.destination}</Link></td>
               <td>{f.plane}</td>
         		</tr>

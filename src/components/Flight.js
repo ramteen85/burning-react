@@ -13,7 +13,7 @@ class Flight extends Component {
       destination: 'SFO',
       origin: 'JFK',
       columns: 4,
-      rows: 10,
+      rows: 30,
       user: {
         name: ''
       }
