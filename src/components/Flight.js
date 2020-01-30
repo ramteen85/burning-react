@@ -87,7 +87,7 @@ class Flight extends Component {
     const seats = new Array(rows).fill(new Array(columns).fill('avail'));
 
     return (
-      <div>
+      <div style={{border: "1px solid #F6490D", borderRadius: "15px",backgroundColor: "#53ACA8",}}>
         <h1>Virgin Airlines</h1>
         <h2>{this.state.flight.date} Flight {this.state.flight.flight_number} {this.state.flight.origin ? this.capitalize(this.state.flight.origin) : null} &gt; {this.state.flight.destination ? this.capitalize(this.state.flight.destination) : null}</h2>
         <div style={{width: "250px"}}>
@@ -96,7 +96,7 @@ class Flight extends Component {
             seats.map((row, i_r) => {
               return row.map((column, i_c) => {
                 console.log('r', i_r, 'c', i_c);
-                return <div key={`${i_r}${i_c}`} style={{width: "50px", border: "1px solid black", display: "inline-block", margin: "5px", backgroundColor: "gray"}} onClick={(e) => this.clickHandler(e, i_r, i_c)}>{this.state.user.length > 0 ? this.state.user : 'avail'}</div>
+                return <div key={`${i_r}${i_c}`} style={{width: "50px", border: "1px solid #F6490D", display: "inline-block", margin: "5px", backgroundColor: "orange", color: 'black', borderRadius: "5px"}} onClick={(e) => this.clickHandler(e, i_r, i_c)}>{this.state.user.length > 0 ? this.state.user : 'avail'}</div>
               })
             })
           }
