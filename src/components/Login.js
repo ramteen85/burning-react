@@ -32,6 +32,7 @@ class Login extends Component {
       const route = '/search';
       this.props.history.push(route);
     }
+
   }
 
   handleSubmit = event => {

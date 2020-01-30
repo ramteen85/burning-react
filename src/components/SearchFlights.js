@@ -28,38 +28,39 @@ class SearchFlights extends Component {
     axios.get(`${URL_FLIGHTS}/${this.state.origin}/${this.state.destination}`)
     .then(res => {
       console.log(res);
+
       this.setState({ flights: res.data})
     })
     .catch(err => console.warn(err));
   }
 
   render() {
-    const testData = [
-      {
-        id: 1,
-        date: '3/1/13',
-        flight: 23,
-        origin: 'JFK',
-        destination: 'SFO',
-        plane: 757
-      },
-      {
-        id: 2,
-        date: '3/3/13',
-        flight: 412,
-        origin: 'JFK',
-        destination: 'SFO',
-        plane: 747
-      },
-      {
-        id: 3,
-        date: '3/1/13',
-        flight: 9,
-        origin: 'JFK',
-        destination: 'SFO',
-        plane: 757
-      }
-    ];
+    // const testData = [
+    //   {
+    //     id: 1,
+    //     date: '3/1/13',
+    //     flight: 23,
+    //     origin: 'JFK',
+    //     destination: 'SFO',
+    //     plane: 757
+    //   },
+    //   {
+    //     id: 2,
+    //     date: '3/3/13',
+    //     flight: 412,
+    //     origin: 'JFK',
+    //     destination: 'SFO',
+    //     plane: 747
+    //   },
+    //   {
+    //     id: 3,
+    //     date: '3/1/13',
+    //     flight: 9,
+    //     origin: 'JFK',
+    //     destination: 'SFO',
+    //     plane: 757
+    //   }
+    // ];
 
     return (
       <div className={styles.container}>
